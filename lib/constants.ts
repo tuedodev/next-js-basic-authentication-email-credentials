@@ -16,3 +16,7 @@ export const STATUS_TAILWIND_BG_COLORS: Record<string, string> = {
 	ACTIVE: 'bg-green-700/50',
 	INACTIVE: 'bg-red-700/50',
 };
+export const BASE_URL =
+	process.env.NODE_ENV !== 'production'
+		? 'http://localhost:3000/'
+		: 'https://next-js-basic-authentication-email-credentials.vercel.app/';

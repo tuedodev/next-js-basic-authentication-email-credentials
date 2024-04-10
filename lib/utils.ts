@@ -1,5 +1,6 @@
 import { SessionType } from './types';
 import { cipherText } from './crypto';
+import { BASE_URL } from './constants';
 
 export function isValidUser(session: SessionType | null) {
 	return (
@@ -10,7 +11,7 @@ export function isValidUser(session: SessionType | null) {
 export async function createMagicLink(id: number, token: string, path: string): Promise<string> {
 	const cipher = await cipherText(id.toString()); //await cipherText(user.id.toString());
 	const key = cipher.success ? cipher.data : '';
-	const magicLink = `http://localhost:3000${path}?key=${encodeURIComponent(key)}&token=${encodeURIComponent(token)}`;
+	const magicLink = `${BASE_URL}${path}?key=${encodeURIComponent(key)}&token=${encodeURIComponent(token)}`;
 	return magicLink;
 }
 
