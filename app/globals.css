@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	color-scheme: light dark;
+}
+[data-theme='light'] {
+	color-scheme: light;
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
+	--form-fields-bg-color: rgb(214, 219, 220);
+}
+[data-theme='dark'] {
+	color-scheme: dark;
+	--foreground-rgb: 255, 255, 255;
+	--background-start-rgb: 41, 44, 47;
+	--background-end-rgb: 12, 12, 12;
+	--form-fields-bg-color: rgb(59, 59, 59);
+}
+
+body {
+	color: rgb(var(--foreground-rgb));
+	background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+}
+
+body:has(dialog[open]) > div {
+	filter: blur(6px);
+}
+input {
+	background-color: var(--form-fields-bg-color);
+}
+dialog {
+	background-color: rgb(var(--background-start-rgb));
+}

@@ -1,0 +1,162 @@
+[
+	{
+		"firstname": "John",
+		"lastname": "Doe",
+		"email": "john.doe@example.com",
+		"password": "start12345",
+		"role": "ADMIN",
+		"status": "ACTIVE"
+	},
+	{
+		"firstname": "Alice",
+		"lastname": "Smith",
+		"email": "alice.smith@example.com",
+		"password": "start12345",
+		"role": "USER",
+		"status": "ACTIVE"
+	},
+	{
+		"firstname": "Michael",
+		"lastname": "Johnson",
+		"email": "michael.johnson@example.com",
+		"password": "start12345",
+		"role": "USER",
+		"status": "ACTIVE"
+	},
+	{
+		"firstname": "Emily",
+		"lastname": "Brown",
+		"email": "emily.brown@example.com",
+		"password": "start12345",
+		"role": "USER",
+		"status": "ACTIVE"
+	},
+	{
+		"firstname": "David",
+		"lastname": "Jones",
+		"email": "david.jones@example.com",
+		"password": "start12345",
+		"role": "USER",
+		"status": "ACTIVE"
+	},
+	{
+		"firstname": "Emma",
+		"lastname": "Taylor",
+		"email": "emma.taylor@example.com",
+		"password": "start12345",
+		"role": "USER",
+		"status": "ACTIVE"
+	},
+	{
+		"firstname": "James",
+		"lastname": "Wilson",
+		"email": "james.wilson@example.com",
+		"password": "start12345",
+		"role": "USER",
+		"status": "ACTIVE"
+	},
+	{
+		"firstname": "Olivia",
+		"lastname": "Martinez",
+		"email": "olivia.martinez@example.com",
+		"password": "start12345",
+		"role": "USER",
+		"status": "ACTIVE"
+	},
+	{
+		"firstname": "William",
+		"lastname": "Anderson",
+		"email": "william.anderson@example.com",
+		"password": "start12345",
+		"role": "USER",
+		"status": "ACTIVE"
+	},
+	{
+		"firstname": "Sophia",
+		"lastname": "Hernandez",
+		"email": "sophia.hernandez@example.com",
+		"password": "start12345",
+		"role": "USER",
+		"status": "ACTIVE"
+	},
+	{
+		"firstname": "Jack",
+		"lastname": "Smith",
+		"email": "jack.smith@example.com",
+		"password": "start12345",
+		"role": "USER",
+		"status": "ACTIVE"
+	},
+	{
+		"firstname": "Harry",
+		"lastname": "Brown",
+		"email": "harry.brown@example.com",
+		"password": "start12345",
+		"role": "USER",
+		"status": "ACTIVE"
+	},
+	{
+		"firstname": "Max",
+		"lastname": "Schmidt",
+		"email": "max.schmidt@example.com",
+		"password": "start12345",
+		"role": "USER",
+		"status": "ACTIVE"
+	},
+	{
+		"firstname": "Lena",
+		"lastname": "Müller",
+		"email": "lena.muller@example.com",
+		"password": "start12345",
+		"role": "USER",
+		"status": "ACTIVE"
+	},
+	{
+		"firstname": "Ivan",
+		"lastname": "Ivanov",
+		"email": "ivan.ivanov@example.com",
+		"password": "start12345",
+		"role": "USER",
+		"status": "ACTIVE"
+	},
+	{
+		"firstname": "Olga",
+		"lastname": "Petrova",
+		"email": "olga.petrova@example.com",
+		"password": "start12345",
+		"role": "USER",
+		"status": "ACTIVE"
+	},
+	{
+		"firstname": "William",
+		"lastname": "Jones",
+		"email": "william.jones@example.com",
+		"password": "start12345",
+		"role": "USER",
+		"status": "ACTIVE"
+	},
+	{
+		"firstname": "Charlotte",
+		"lastname": "Davies",
+		"email": "charlotte.davies@example.com",
+		"password": "start12345",
+		"role": "USER",
+		"status": "ACTIVE"
+	},
+	{
+		"firstname": "Liam",
+		"lastname": "Wilson",
+		"email": "liam.wilson@example.com",
+		"password": "start12345",
+		"role": "USER",
+		"status": "ACTIVE"
+	},
+	{
+		"firstname": "Amelia",
+		"lastname": "Taylor",
+		"email": "amelia.taylor@example.com",
+		"password": "start12345",
+		"role": "USER",
+		"status": "ACTIVE"
+	}
+]
