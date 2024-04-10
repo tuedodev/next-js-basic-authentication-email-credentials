@@ -10,6 +10,7 @@ Next.js Basic Authetication with Email Credentials and Email verification (using
 - Basic protection of websites using session cookies and user roles
 - user has to confirm registration via email verification
 - user (role USER) can update his/her settings, reset password and get link via email for setting new password
+- user (role USER) can delete the account inside the danger zone (modal confirmation)
 - user (role ADMIN) can make CRUD operations on users on the admin dashboard
 - toggle light/dark mode (current fallback theme is dark)
 
@@ -27,7 +28,7 @@ Authentication and toggle light and dark mode are based on the extensive use of 
 
 ## No NextAuth - Using own authentication and encryption functions
 
-Since NextAuth only provides an additional layer of abstraction layer for the authentication process and we are not using 3rd-party-authentication providers we use our own authentication and encryption methods and protect sensitive areas of the website within the middleware with session tokens and authorization access for certain roles. Although NextAuth´s documentation [warns](https://next-auth.js.org/providers/credentials) against the use of email credentials with passwords due to additional complexity associated with supporting usernames and passwords you could also argue why the improper integration of 3rd party providers represents any advantage of security. I disagree with them in this point. There are often good reasons to use your own authentication system with email and password and to have full control over the use of your data.
+Since NextAuth only provides an additional layer of abstraction layer for the authentication process and we are not using 3rd-party-authentication providers, we use our own authentication and encryption methods and protect sensitive areas of the website within the middleware with session tokens and authorization access for certain roles. Although NextAuth´s documentation [warns](https://next-auth.js.org/providers/credentials) against the use of email credentials with passwords due to additional complexity associated with supporting usernames and passwords you could also argue why the improper integration of 3rd party providers represents any advantage of security. I disagree with them in this point. There are often good reasons to use your own authentication system with email and password and to have full control over the use of your data.
 
 ## Getting Started
 
