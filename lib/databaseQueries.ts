@@ -5,6 +5,7 @@ import { Prisma, User } from '@prisma/client';
 import { RelationsType, SessionType, UserResult, UserResultDB, UserWithReferences } from './types';
 import { encryptIdEmail } from './utils';
 import { decipherText } from './crypto';
+import { revalidatePath } from 'next/cache';
 
 export async function getSessionUserFromDB(session: SessionType): Promise<UserResultDB> {
 	return new Promise(async (resolve, _) => {

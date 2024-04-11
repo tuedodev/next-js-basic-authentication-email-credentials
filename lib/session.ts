@@ -271,8 +271,6 @@ export async function changeSettingsAdminAction(
 		let newData: Record<string, any> = {
 			firstname: data.firstname,
 			lastname: data.lastname,
-			//roleId: parseInt(data.roleId),
-			//statusId: parseInt(data.statusId),
 		};
 		const relations = await getOrCreateRelations({
 			role: data.role,
@@ -292,8 +290,9 @@ export async function changeSettingsAdminAction(
 	} else {
 		serverValidation = result.error.flatten();
 	}
-	revalidatePath('/auth/settings');
+
 	return serverValidation;
+	revalidatePath('/auth/settings');
 }
 
 export async function passwordForgotAction(

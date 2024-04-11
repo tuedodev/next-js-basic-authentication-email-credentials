@@ -3,32 +3,53 @@
 import { searchAction } from '@/lib/session';
 import ModalProvider from '../context/ModalProvider';
 import UserDeleteItem from './UserDeleteItem';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useOptimistic, useRef, useState } from 'react';
 import Search from '../icons/Search';
 import { useFormState } from 'react-dom';
 import { UserWithReferences } from '@/lib/types';
 import { deleteUser } from '@/lib/databaseQueries';
+import { startTransition } from 'react';
 
 type Props = {
 	allUsers: UserWithReferences[];
 };
 
-const UserDeleteList: React.FC<Props> = ({ allUsers: initAllUsers }) => {
-	const [allUsers, setAllUsers] = useState<UserWithReferences[]>(initAllUsers);
+const UserDeleteList: React.FC<Props> = ({ allUsers }) => {
+	const [initAllUsers, setInitAllUsers] = useState<UserWithReferences[]>(allUsers);
 	const [state, formAction] = useFormState(searchAction, null);
 	const formEl = useRef<HTMLFormElement>(null);
+	const [optimisticAllUsers, setOptimisticAllUsers] = useOptimistic<
+		UserWithReferences[],
+		number | UserWithReferences[]
+	>(initAllUsers, (state, action) => {
+		if (typeof action === 'number') {
+			return [...state.filter((user) => user.id !== action)];
+		}
+		return [...action];
+	});
 
 	useEffect(() => {
 		if (state) {
-			setAllUsers((prev) => [...state]);
+			startTransition(() => {
+				setOptimisticAllUsers(state);
+				setInitAllUsers(state);
+			});
 		}
-	}, [state, setAllUsers]);
+	}, [state, setOptimisticAllUsers]);
 
 	function onChangeHandler(event: React.FormEvent<HTMLInputElement>) {
 		const form = event.currentTarget.form;
 		if (form) {
 			form.requestSubmit();
 		}
+	}
+
+	async function deleteUserClient(id: number) {
+		startTransition(() => {
+			setOptimisticAllUsers(id);
+		});
+		await deleteUser(id);
+		setInitAllUsers((prev) => [...prev.filter((user) => user.id !== id)]);
 	}
 
 	return (
@@ -50,10 +71,10 @@ const UserDeleteList: React.FC<Props> = ({ allUsers: initAllUsers }) => {
 					/>
 				</form>
 			</nav>
-			{allUsers.length > 0 && (
+			{optimisticAllUsers.length > 0 ? (
 				<ul className="space-y-4 text-left text-gray-400 w-full">
 					<ModalProvider>
-						{allUsers.map((user) => {
+						{optimisticAllUsers.map((user) => {
 							return (
 								<UserDeleteItem
 									key={user.id}
@@ -61,12 +82,16 @@ const UserDeleteList: React.FC<Props> = ({ allUsers: initAllUsers }) => {
 									role={user.role.name}
 									fields={[user.email, user.firstname, user.lastname]}
 									id={user.id}
-									deleteUser={deleteUser}
+									deleteUser={deleteUserClient.bind(null, user.id)}
 								/>
 							);
 						})}
 					</ModalProvider>
 				</ul>
+			) : (
+				<p className="text-gray-300 text-xs flex items-center my-1 py-2 px-2 rounded-md bg-gray-700/75 mx-[84px]">
+					No matching users found.
+				</p>
 			)}
 		</>
 	);

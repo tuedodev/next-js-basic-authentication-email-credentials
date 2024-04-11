@@ -16,13 +16,13 @@ type Props = {
 	id: number;
 	role: string;
 	status: string;
-	deleteUser: (id: number) => Promise<UserResult>;
+	deleteUser: () => void;
 };
 const UserDeleteItem: React.FC<Props> = ({ fields, id, role, status, deleteUser }) => {
 	const { setContent, setShowModal, closeModal } = useModal();
 	const router = useRouter();
 
-	function deleteHandler(id: number) {
+	function deleteHandler() {
 		setContent({
 			modalContent:
 				role === 'ADMIN' ? (
@@ -44,15 +44,15 @@ const UserDeleteItem: React.FC<Props> = ({ fields, id, role, status, deleteUser 
 				role === 'ADMIN'
 					? async () => {
 							closeModal();
-							router.refresh();
+							router.push('/auth/admin?refresh=1');
 							return;
 					  }
 					: async (event: React.MouseEvent<HTMLButtonElement>) => {
 							if (event.currentTarget.id === 'confirm') {
 								try {
-									await deleteUser(id);
+									deleteUser();
 									closeModal();
-									router.refresh();
+									router.push('/auth/admin?refresh=2');
 								} catch (err) {
 									alert('Could not delete user');
 								}
@@ -67,7 +67,7 @@ const UserDeleteItem: React.FC<Props> = ({ fields, id, role, status, deleteUser 
 		<li className="flex items-center my-1">
 			<Delete
 				className={twMerge('w-6 h-6 mr-1', role === 'ADMIN' ? 'text-gray-600 hover:cursor-not-allowed' : '')}
-				onClickHandler={role !== 'ADMIN' ? deleteHandler.bind(null, id) : () => {}}
+				onClickHandler={role !== 'ADMIN' ? deleteHandler : undefined}
 			/>
 			<Symbol
 				title={role}

@@ -27,7 +27,7 @@ const ModalProvider: React.FC<Props> = ({ children }) => {
 	function closeModal() {
 		setShowModal(false);
 		if (typeof window !== 'undefined') {
-			window.location.reload();
+			//window.location.reload();
 		}
 	}
 

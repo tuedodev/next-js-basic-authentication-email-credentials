@@ -46,10 +46,13 @@ const SettingsForm: React.FC<Props> = ({ user }) => {
 			}).then(() => {
 				router.push('/auth/login');
 			});
+		} else {
+			console.log('Else');
+			//router.push('/auth/settings');
 		}
-		if (typeof window !== 'undefined') {
+		/*if (typeof window !== 'undefined') {
 			window.location.reload(); // router.push('/auth/settings') is not doing a complete refresh of client components
-		}
+		}*/
 	}
 
 	return (
