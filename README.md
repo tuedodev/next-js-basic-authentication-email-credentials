@@ -92,7 +92,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Seeding Prisma Database
 
-Fill in 20 dummy accounts: `npx prisma db seed`
+Fill in 20 dummy accounts: `npx prisma db seed`.
 You can customize the dummies according to your wishes in the `@prisma/dummyUser.json` file.
 
 ## Test
