@@ -17,7 +17,7 @@ Next.js Basic Authetication with Email Credentials and Email verification (using
 ## Tech Stack
 
 - Next.js@14.1
-- Prisma ORM (using SQLite database)
+- Prisma ORM (using Postgres database, deployed currently on Vercel)
 - Zod verification
 - Tailwind CSS
 - Resend API for basic transactional emails
@@ -41,6 +41,14 @@ To work properly you need to add a SECRET_KEY and a RESEND_API token [Link to Re
 ```bash
 SECRET_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 RESEND_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+POSTGRES_URL="postgres://default:xxxxxxxxxxxxxxxxxxxxxx.eu-central-1.aws.neon.tech:5432/xxxxxxxx?sslmode=require"
+POSTGRES_PRISMA_URL="postgres://default:xxxxxxxxxxxxxxxxxxxxxx.eu-central-1.aws.neon.tech:5432/xxxxxxxx?sslmode=require&pgbouncer=true&connect_timeout=15"
+POSTGRES_URL_NO_SSL="postgres://default:xxxxxxxxxxxxxxxxxxxxxx.eu-central-1.aws.neon.tech:5432/xxxxxxxx"
+POSTGRES_URL_NON_POOLING="postgres://xxxxxxxxxxxxxxxxxxxxxx.eu-central-1.aws.neon.tech:5432/xxxxxxxx?sslmode=require"
+POSTGRES_USER="default"
+POSTGRES_HOST="ep-rapid-xxxxxxxxxxxxxxxxxxxxxx.aws.neon.tech"
+POSTGRES_PASSWORD="xxxxxxxxxxxxxxxx"
+POSTGRES_DATABASE="xxxxxxxx"
 ```
 
 ### Customize Settings
