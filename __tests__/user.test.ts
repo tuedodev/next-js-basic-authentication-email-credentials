@@ -23,14 +23,14 @@ let validUser: Record<string, any> | null;
 let dataValidUser: Record<string, any> = {
 	firstname: 'John',
 	lastname: 'Doe',
-	email: 'example@example123.com',
+	email: 'example@example12345.com',
 	password: 'start12345',
 	confirmPassword: 'start12345',
 };
 let dataNotValidUser: Record<string, any> = {
 	firstname: 'Milly',
 	lastname: 'Jones',
-	email: 'example123@example12345.com',
+	email: 'example123@example123456.com',
 	password: 'start12345',
 	confirmPassword: 'start123456',
 };
@@ -46,6 +46,10 @@ for (const [k, v] of Object.entries(dataNotValidUser)) {
 describe.sequential('User Check CRUD Operations', async () => {
 	it('validation should be successfull', async () => {
 		const result = await asyncValidatateRawFormDataAgainstSchema(registrationServerSchema, formDataValidUser);
+		if (!result.success) {
+			console.log(result.error.flatten());
+		}
+
 		expect(result).toHaveProperty('success');
 		expect(result).toHaveProperty('data');
 		delete dataValidUser.confirmPassword;
