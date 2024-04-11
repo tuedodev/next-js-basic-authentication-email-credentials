@@ -14,7 +14,7 @@ import {
 	userSchema,
 	validatateRawFormDataAgainstSchema,
 } from '@/lib/validation';
-import { createMagicLink } from '@/lib/utils';
+import { createMagicLink, createToken } from '@/lib/utils';
 import { compare, hashPassword } from '@/lib/crypto';
 
 vi.stubEnv('SECRET_KEY', 'MySecretKeyStoredInEnv');
@@ -57,10 +57,9 @@ describe.sequential('User Check CRUD Operations', async () => {
 	});
 	it('creation of user should be successfull', async () => {
 		const relations = await getOrCreateRelations({ role: 'USER', status: 'REGISTERED' });
-		const token = Buffer.from(crypto.getRandomValues(new Uint8Array(36))).toString('base64');
+		const token = createToken(36);
 		const roleId = relations?.roleId || 0;
 		const statusId = relations?.statusId || 0;
-		console.log(token);
 		validUser = await createUser({
 			roleId,
 			statusId,

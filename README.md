@@ -17,7 +17,7 @@ Next.js Basic Authetication with Email Credentials and Email verification (using
 ## Tech Stack
 
 - Next.js@14.1
-- Prisma ORM (using Postgres database, deployed currently on Vercel)
+- Prisma ORM (using Postgres database, deployed currently on Vercel/Neon)
 - Zod verification
 - Tailwind CSS
 - Resend API for basic transactional emails
