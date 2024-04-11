@@ -1,6 +1,6 @@
-# Next.js Basic Authentication with Email Credentials and Email verification
+# Next.js Basic 2-Factor Authentication with Email and Password Credentials
 
-Next.js Basic Authetication with Email Credentials and Email verification (using Resend API and automatic generated magic links for email verification and password-forget) based on Prisma ORM and SQLite (easily customizable). Admin dashboard with search functiionality for basic user administration and CRUD methods included. Toggle Light and dark mode based on Session Cookies also included as additional feature. It is an authentication boilerplate for Next JS (app directory and SSR) and a solid starting point for many types of websites (blog, ecommerce, etc.)
+Next.js Basic Authentication with Email and Password Credentials and 2-factor verification (using Resend API and automatic generated magic links for email verification and password-forget) based on Prisma ORM and SQLite (easily customizable). Admin dashboard with search functiionality for basic user administration and CRUD methods included. Toggle Light and dark mode based on Session Cookies also included as additional feature. It is an authentication boilerplate for Next JS (app directory and SSR) and a solid starting point for many types of websites (blog, ecommerce, etc.)
 
 ![Screenshot](./public/_screenshot.jpg)
 
