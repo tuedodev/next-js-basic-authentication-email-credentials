@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse, NextFetchEvent } from 'next/server';
-import { getSessionToken, updateSessionToken, updateSessionTokenObject } from './lib/session';
+import { NextRequest, NextResponse } from 'next/server';
+import { getSessionToken, updateSessionToken } from './lib/session';
 
 export async function middleware(request: NextRequest) {
 	const pathname = request.nextUrl.pathname;
