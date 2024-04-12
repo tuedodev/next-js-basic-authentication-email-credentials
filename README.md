@@ -22,6 +22,10 @@ Next.js Basic Authentication with Email and Password Credentials and 2-factor ve
 - Tailwind CSS
 - Resend API for basic transactional emails
 
+## Demo version deployed on Vercel
+
+A demo version with limited functionality (registration will fail because the integrated free tier of Resend only sends transactional emails to one, already registered email address) is deployed on Vercel: [Link](https://next-js-basic-authentication-email-credentials.vercel.app/)
+
 ## Using session cookies for persistence
 
 Authentication and toggle light and dark mode are based on the extensive use of session cookies. The validity period of the individual cookies and magic links can be adjusted in the `@lib/constants` file.
@@ -92,7 +96,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Seeding Prisma Database
 
-Fill in 20 dummy accounts: `npx prisma db seed`.
+Fill in 20 dummy accounts: `npx prisma db seed`
 You can customize the dummies according to your wishes in the `@prisma/dummyUser.json` file.
 
 ## Test
