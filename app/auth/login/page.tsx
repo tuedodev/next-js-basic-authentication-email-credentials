@@ -1,6 +1,7 @@
 import LoginForm from '@/components/form/LoginForm';
 import Link from 'next/link';
 
+export const dynamic = 'force-dynamic';
 type Props = {
 	searchParams: URLSearchParams;
 };

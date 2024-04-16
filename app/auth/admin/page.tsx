@@ -1,6 +1,8 @@
 import UserDeleteList from '@/components/layout/UserDeleteList';
 import { getAllUsers } from '@/lib/databaseQueries';
 
+export const dynamic = 'force-dynamic';
+
 const Adminpage = async () => {
 	const allUsers = await getAllUsers('');
 

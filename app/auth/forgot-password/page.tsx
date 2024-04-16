@@ -1,5 +1,6 @@
 import EmailForm from '@/components/form/EmailForm';
 
+export const dynamic = 'force-dynamic';
 const ForgotPasswordPage = () => {
 	return (
 		<main className="grid grid-cols-[min(95%,_480px)] grid-rows-1 justify-center items-center px-4">

@@ -4,6 +4,7 @@ import SettingsFormAdmin from '@/components/form/SettingsFormAdmin';
 import { getSessionUserFromDB, getUserById } from '@/lib/databaseQueries';
 import { getSessionToken } from '@/lib/session';
 
+export const dynamic = 'force-dynamic';
 /* Prisma ORM doesn´t allow to just omit sensitive fields with exclude
 https://github.com/prisma/prisma/issues/5042
 */

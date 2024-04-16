@@ -1,6 +1,7 @@
 import RegisterForm from '@/components/form/RegisterForm';
 import React from 'react';
 
+export const dynamic = 'force-dynamic';
 const RegisterPage = async () => {
 	return (
 		<main className="grid grid-cols-[min(95%,_480px)] grid-rows-1 justify-center items-center px-4">

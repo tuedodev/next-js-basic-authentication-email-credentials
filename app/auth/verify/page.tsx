@@ -3,6 +3,7 @@ import ModalProvider from '@/components/context/ModalProvider';
 import ShowMessageModal from '@/components/layout/ShowMessageModal';
 import { deleteUser, getUser, updateStatus } from '@/lib/databaseQueries';
 
+export const dynamic = 'force-dynamic';
 type Props = {
 	searchParams: URLSearchParams;
 };
