@@ -114,9 +114,8 @@ bun test
 
 ```
 
-[!NOTE]
-
-With React 19, the previous hook useFormState is now renamed useActionState. However, React 19 is not yet fully supported in the stable version of Next.js, which is why the previous name is used in this code.
+> [!IMPORTANT]
+> With React 19, the previous hook useFormState is now renamed useActionState. However, React 19 is not yet fully supported in the stable version of Next.js, which is why the previous name is used in this code.
 
 ## Learn More
 
